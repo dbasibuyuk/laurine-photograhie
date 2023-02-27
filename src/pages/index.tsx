@@ -54,6 +54,7 @@ export default function Home() {
                 Hey!
               </Typography>
               <Typography variant="subtitle1" paddingBottom={2}>
+                {`
                 Moi c’est Laurine, enchantée 🙂 Passionnée de photographie
                 depuis de nombreuses années, j'ai commencé à documenter mes
                 voyages, pour pouvoir garder une trace de mes aventures. J'aime
@@ -61,7 +62,7 @@ export default function Home() {
                 d'une reconversion professionnelle que j'ai décidé de poursuivre
                 ma passion pour la photographie et la porter encore plus loin.
                 La photographie pour moi est un univers magique qui permet de
-                transmettre des émotions, et de les figer dans le temps…
+                transmettre des émotions, et de les figer dans le temps…`}
               </Typography>
               <Button variant="outlined" size="large">
                 A PROPOS DE MOI
