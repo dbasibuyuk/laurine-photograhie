@@ -113,3 +113,6 @@ a {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.slick-list {margin: 0 -5px;}
+.slick-slide>div {padding: 0 5px;}
