@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import { useTheme } from "@mui/system";
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
 import React from "react";
+import localFont from "@next/font/local";
 
 const linkStyle = {
   position: "relative",
@@ -50,6 +51,11 @@ const selectedLinkStyle = {
   },
 };
 
+const yeseva = localFont({
+  src: "../../../public/fonts/YesevaOne-Regular.ttf",
+  display: "swap",
+});
+
 const NavbarItems = (props: { isMobile?: boolean }) => {
   const { isMobile } = props;
   const router = useRouter();
@@ -70,11 +76,12 @@ const NavbarItems = (props: { isMobile?: boolean }) => {
         >
           <Typography
             variant="h6"
-            component="span"
+            component={"h6"}
             display={"inline"}
             sx={{
               textAlign: "center",
             }}
+            fontFamily={yeseva.style.fontFamily}
           >
             ACCUEIL
           </Typography>
@@ -98,6 +105,7 @@ const NavbarItems = (props: { isMobile?: boolean }) => {
             variant="h6"
             component="span"
             sx={{ textAlign: "center" }}
+            fontFamily={yeseva.style.fontFamily}
           >
             A PROPOS
           </Typography>
@@ -121,6 +129,7 @@ const NavbarItems = (props: { isMobile?: boolean }) => {
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, textAlign: "center" }}
+            fontFamily={yeseva.style.fontFamily}
           >
             PORTFOLIO
           </Typography>
@@ -144,6 +153,7 @@ const NavbarItems = (props: { isMobile?: boolean }) => {
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, textAlign: "center" }}
+            fontFamily={yeseva.style.fontFamily}
           >
             PRESTATIONS
           </Typography>
@@ -167,6 +177,7 @@ const NavbarItems = (props: { isMobile?: boolean }) => {
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, textAlign: "center" }}
+            fontFamily={yeseva.style.fontFamily}
           >
             CONTACT
           </Typography>
