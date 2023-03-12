@@ -56,37 +56,17 @@ const yeseva = localFont({
   display: "swap",
 });
 
+const pinyon = localFont({
+  src: "../../../public/fonts/PinyonScript-Regular.ttf",
+  display: "swap",
+});
+
 const NavbarItems = (props: { isMobile?: boolean }) => {
   const { isMobile } = props;
   const router = useRouter();
   const boxStyle = { flexGrow: 1, display: { xs: "flex" } };
   return (
     <>
-      <Box
-        justifyContent={"center"}
-        sx={isMobile ? { marginBottom: "10px", ...boxStyle } : { ...boxStyle }}
-      >
-        <Link
-          color={"black"}
-          href={"/"}
-          underline={"none"}
-          sx={
-            router.asPath === "/" ? { ...selectedLinkStyle } : { ...linkStyle }
-          }
-        >
-          <Typography
-            variant="h6"
-            component={"h6"}
-            display={"inline"}
-            sx={{
-              textAlign: "center",
-            }}
-            fontFamily={yeseva.style.fontFamily}
-          >
-            ACCUEIL
-          </Typography>
-        </Link>
-      </Box>
       <Box
         justifyContent={"center"}
         sx={isMobile ? { marginBottom: "10px", ...boxStyle } : { ...boxStyle }}
@@ -132,6 +112,28 @@ const NavbarItems = (props: { isMobile?: boolean }) => {
             fontFamily={yeseva.style.fontFamily}
           >
             PORTFOLIO
+          </Typography>
+        </Link>
+      </Box>
+      <Box
+        justifyContent={"center"}
+        sx={isMobile ? { marginBottom: "10px", ...boxStyle } : { ...boxStyle }}
+      >
+        <Link
+          color={"black"}
+          href={"/"}
+          underline={"none"}
+          sx={isMobile ? { display: "none" } : {}}
+        >
+          <Typography
+            variant="h4"
+            display={"inline"}
+            sx={{
+              textAlign: "center",
+            }}
+            fontFamily={pinyon.style.fontFamily}
+          >
+            Laurine Plouvier Photograhie
           </Typography>
         </Link>
       </Box>
@@ -194,14 +196,14 @@ export const Navbar = () => {
   };
 
   const theme = useTheme();
-  const greaterThanMid = useMediaQuery(theme.breakpoints.up("md"));
+  const greaterThanLg = useMediaQuery(theme.breakpoints.up("lg"));
   return (
     <Container>
       <Grid item xs={12}>
         <AppBar position="absolute" color="transparent">
           <Container maxWidth="lg">
             <Toolbar>
-              {greaterThanMid ? (
+              {greaterThanLg ? (
                 <NavbarItems />
               ) : (
                 <Accordion
@@ -228,7 +230,27 @@ export const Navbar = () => {
                         onClick={toggleAccordion}
                       />
                     }
-                  />
+                  >
+                    <Link
+                      color={"black"}
+                      href={"/"}
+                      underline={"none"}
+                      /*sx={
+                        router.asPath === "/" ? { ...selectedLinkStyle } : { ...linkStyle }
+                      }*/
+                    >
+                      <Typography
+                        variant="h4"
+                        display={"inline"}
+                        sx={{
+                          textAlign: "center",
+                        }}
+                        fontFamily={pinyon.style.fontFamily}
+                      >
+                        Laurine Plouvier Photograhie
+                      </Typography>
+                    </Link>
+                  </AccordionSummary>
                   <AccordionDetails>
                     <Box sx={{ display: "flex", flexDirection: "column" }}>
                       <NavbarItems isMobile={true} />

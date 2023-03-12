@@ -1,19 +1,37 @@
-import { Grid } from "@mui/material";
+import { Grid, useMediaQuery } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { ContainedButton } from "@/components/ContainedButton";
+import { useTheme } from "@mui/system";
 
 export const Hey = () => {
+  const theme = useTheme();
+  const greaterThanLg = useMediaQuery(theme.breakpoints.up("lg"));
   return (
     <Grid container justifyContent={"center"}>
-      <Grid container paddingY={8} maxWidth={"lg"}>
-        <Grid item xs={4}>
-          <img src={"/hey.jpg"} height={"350px"} width={"300px"} alt={"hey"} />
+      <Grid container paddingY={8} maxWidth={"lg"} justifyContent={"center"}>
+        <Grid item xs={12} xl={4}>
+          <Grid container justifyContent={"center"}>
+            <img
+              src={"/hey.jpg"}
+              height={"350px"}
+              width={"300px"}
+              alt={"hey"}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={8}>
-          <Typography variant="h3" paddingBottom={4}>
+        <Grid item xs={12} xl={8}>
+          <Typography
+            variant="h3"
+            paddingBottom={4}
+            paddingTop={greaterThanLg ? 0 : 4}
+          >
             Hey!
           </Typography>
-          <Typography variant="subtitle1" paddingBottom={2}>
+          <Typography
+            variant="subtitle1"
+            paddingBottom={2}
+            textAlign={"justify"}
+          >
             {`
                 Moi c’est Laurine, enchantée 🙂 Passionnée de photographie
                 depuis de nombreuses années, j'ai commencé à documenter mes

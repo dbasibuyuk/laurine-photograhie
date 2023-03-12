@@ -23,7 +23,7 @@ export default function Home() {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={8}>
+      <Grid item xs={12} lg={8}>
         <RetrouvezMoi />
       </Grid>
     </Grid>
