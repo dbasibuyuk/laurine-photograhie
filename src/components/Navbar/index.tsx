@@ -78,7 +78,7 @@ const NavbarItems = (props: { isMobile?: boolean }) => {
               ? { ...selectedLinkStyle }
               : { ...linkStyle }
           }
-          href={"/portfolio"}
+          href={"/apropos"}
           underline={"none"}
         >
           <Typography

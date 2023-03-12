@@ -12,6 +12,7 @@ export const Hey = () => {
         <Grid item xs={12} xl={4}>
           <Grid container justifyContent={"center"}>
             <img
+              style={{ boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px;" }}
               src={"/hey.jpg"}
               height={"350px"}
               width={"300px"}
